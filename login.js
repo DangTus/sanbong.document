@@ -1,6 +1,6 @@
 function loginSuccess() {
     $.ajax({
-        url: `${url_api}/owner/login`,
+        url: `${url_api}/login`,
         type: "post",
         data: {
             email: "chusan1@gmail.com",
@@ -15,7 +15,7 @@ function loginSuccess() {
 
 function loginFail() {
     $.ajax({
-        url: `${url_api}/owner/login`,
+        url: `${url_api}/login`,
         type: "post",
         data: {
             email: "chusan1@gmail.com",
@@ -30,7 +30,7 @@ function loginFail() {
 
 function loginErrorStatus() {
     $.ajax({
-        url: `${url_api}/owner/login`,
+        url: `${url_api}/login`,
         type: "post",
         data: {
             email: "chusankhoa@gmail.com",
@@ -45,7 +45,7 @@ function loginErrorStatus() {
 
 function loginErrorValidate() {
     $.ajax({
-        url: `${url_api}/owner/login`,
+        url: `${url_api}/login`,
         type: "post",
         data: {
             email: "admin",
