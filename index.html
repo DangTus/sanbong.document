@@ -20,11 +20,18 @@
         <button onclick="refuse()">Từ chối hồ sơ chủ sân bóng thành công</button>
         <button onclick="verificationFail()">Thất bại vì truyền thiếu tham số</button>
 
+        <h1>Adress API</h1>
+        <button onclick="getListProvince()">Danh sách tất cả tỉnh thành</button>
+        <button onclick="getListDistrict()">Danh sách Quận/Huyện tại Đà Nẵng</button>
+        <button onclick="getListWard()">Danh sách Phường/Xã tại Hải Châu</button>
+        <button onclick="getWardDetail()">Chi tiết Phường/Xã Hải Châu</button>
+
         <script>
             url_api = "http://localhost/sanbong.api/api";
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
         <script src="login.js"></script>
         <script src="verification.js"></script>
+        <script src="address.js"></script>
     </body>
 </html>
