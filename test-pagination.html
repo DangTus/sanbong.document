@@ -17,7 +17,7 @@
 
         <div class="content-wrapper">
             <div class="table-responsive">
-                <table class="table table-primary">
+                <table class="table table-success">
                     <thead>
                         <tr>
                             <th scope="col">id</th>
@@ -51,22 +51,23 @@
                     setDataTable(res.data);
 
                     // Tạo HTML cho phân trang
-                    var paginationHtml = createPaginationHtml(res.meta);
-
-                    // Thêm HTML vào div phân trang
-                    $("#pagination-container").html(paginationHtml);
+                    createPaginationHtml(res.meta);
                 });
             }
 
             function setDataTable(data) {
-                var mBody = $(".content-wrapper tbody");
-                var bodyHtml = data.map(function (item) {
-                    return `<tr class="">
+                let mBody = $(".content-wrapper tbody");
+
+                // Tạo HTML cho từng mục trong mảng dữ liệu
+                let bodyHtml = data
+                    .map(function (item) {
+                        return `<tr class="">
                                 <td>${item.id}</td>
                                 <td>${item.name}</td>
                                 <td>${item.status.name}</td>
                             </tr>`;
-                });
+                    })
+                    .join("");
 
                 mBody.html(bodyHtml);
             }
@@ -74,9 +75,9 @@
             function createPaginationHtml(meta) {
                 let currentPage = meta.current_page;
 
-                // Tạo HTML cho phân trang sử dụng Bootstrap
                 var paginationHtml = '<ul class="pagination">';
 
+                // Tạo HTML cho mỗi liên kết phân trang
                 paginationHtml += meta.links
                     .map((link) => {
                         let activeClass =
@@ -87,19 +88,26 @@
 
                         if (link.url) {
                             return `<li class="page-item ${activeClass}">
-                            <a class="page-link" href="#" onclick="callAPI('${link.url}')">${label}</a>
-                        </li>`;
+                                        <a class="page-link" href="#" data-urlclick='${link.url}'>${label}</a>
+                                    </li>`;
                         } else {
                             return `<li class="page-item disabled">
-                            <a class="page-link" href="#">${label}</a>
-                        </li>`;
+                                        <a class="page-link" href="#">${label}</a>
+                                    </li>`;
                         }
                     })
                     .join("");
 
                 paginationHtml += "</ul>";
 
-                return paginationHtml;
+                $("#pagination-container").html(paginationHtml);
+
+                // Đính kèm trình xử lý sự kiện nhấp vào liên kết phân trang
+                $("li.page-item:not(.active) a.page-link").click(function (e) {
+                    e.preventDefault();
+
+                    callAPI($(this).data("urlclick"));
+                });
             }
         </script>
     </body>

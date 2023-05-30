@@ -11,13 +11,14 @@
 
         <button onclick="loginSuccess()">Đăng nhập thành công</button>
         <button onclick="loginFail()">Đăng nhập sai</button>
-        <button onclick="loginErrorStatus()">
-            Đăng nhập tài khoản bị khóa
-        </button>
+        <button onclick="loginErrorStatus()">Đăng nhập tài khoản bị khóa</button>
         <button onclick="loginErrorValidate()">Đăng nhập validate</button>
 
         <h1>Duyệt tài khoản của Chủ sân</h1>
         <button onclick="getOwner()">Lấy danh sách chủ sân</button>
+        <button onclick="approve()">Duyệt hồ sơ chủ sân bóng thành công</button>
+        <button onclick="refuse()">Từ chối hồ sơ chủ sân bóng thành công</button>
+        <button onclick="verificationFail()">Thất bại vì truyền thiếu tham số</button>
 
         <script>
             url_api = "http://localhost/sanbong.api/api";
