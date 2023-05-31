@@ -17,7 +17,7 @@
 
         <div class="content-wrapper">
             <div class="table-responsive">
-                <table class="table table-success">
+                <table class="table table-primary">
                     <thead>
                         <tr>
                             <th scope="col">id</th>
@@ -51,7 +51,7 @@
                     setDataTable(res.data);
 
                     // Tạo HTML cho phân trang
-                    createPaginationHtml(res.meta);
+                    createPaginationHtml(res.links, res.current_page);
                 });
             }
 
@@ -72,19 +72,14 @@
                 mBody.html(bodyHtml);
             }
 
-            function createPaginationHtml(meta) {
-                let currentPage = meta.current_page;
-
+            function createPaginationHtml(links, currentPage) {
                 var paginationHtml = '<ul class="pagination">';
 
                 // Tạo HTML cho mỗi liên kết phân trang
-                paginationHtml += meta.links
+                paginationHtml += links
                     .map((link) => {
-                        let activeClass =
-                            Number(link.label) === currentPage ? "active" : "";
-                        let label = link.label
-                            .replace(" Previous", "")
-                            .replace("Next ", "");
+                        let activeClass = Number(link.label) === currentPage ? "active" : "";
+                        let label = link.label.replace(" Previous", "").replace("Next ", "");
 
                         if (link.url) {
                             return `<li class="page-item ${activeClass}">

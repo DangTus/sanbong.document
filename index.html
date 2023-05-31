@@ -26,6 +26,12 @@
         <button onclick="getListWard()">Danh sách Phường/Xã tại Hải Châu</button>
         <button onclick="getWardDetail()">Chi tiết Phường/Xã Hải Châu</button>
 
+        <h1>Sân bóng khách hàng</h1>
+        <button onclick="getLocationByWard()">Lấy địa điểm cho thuê theo Phường/Xã</button>
+        <button onclick="getListField()">Lấy danh sách sân bóng</button>
+        <button onclick="getFieldDetail()">Lấy chi tiết sân bóng</button>
+        <button onclick="getTimeSlot()">Lấy khung giờ</button>
+
         <script>
             url_api = "http://localhost/sanbong.api/api";
         </script>
@@ -33,5 +39,6 @@
         <script src="login.js"></script>
         <script src="verification.js"></script>
         <script src="address.js"></script>
+        <script src="field.js"></script>
     </body>
 </html>
