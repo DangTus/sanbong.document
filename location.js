@@ -12,14 +12,12 @@ function getLocationByWard() {
     });
 }
 
-function getListField() {
+function getLocationDetail() {
     $.ajax({
-        url: `${url_api}/field`,
+        url: `${url_api}/location/by-id`,
         type: "get",
         data: {
-            ward_id: 20227,
             location_id: 1,
-            type_id: 2,
         },
         success(res) {
             console.log(res);
@@ -28,12 +26,24 @@ function getListField() {
     });
 }
 
-function getFieldDetail() {
+function getFieldType() {
     $.ajax({
-        url: `${url_api}/field/detail`,
+        url: `${url_api}/field-type`,
+        type: "get",
+        success(res) {
+            console.log(res);
+        },
+        error: console.log,
+    });
+}
+
+function getField() {
+    $.ajax({
+        url: `${url_api}/field-by-type-and-location`,
         type: "get",
         data: {
-            field_id: 1,
+            type_id: 1,
+            location_id: 1,
         },
         success(res) {
             console.log(res);
@@ -44,7 +54,7 @@ function getFieldDetail() {
 
 function getTimeSlot() {
     $.ajax({
-        url: `${url_api}/field/time-slot`,
+        url: `${url_api}/location/time-slot`,
         type: "get",
         data: {
             date: "2023-06-30",
