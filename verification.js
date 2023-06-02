@@ -14,7 +14,7 @@ function approve() {
         url: `${url_api}/admin/verification`,
         type: "post",
         data: {
-            id: 3,
+            owner_id: 3,
             status_id: 2,
         },
         success(res) {
@@ -29,7 +29,7 @@ function refuse() {
         url: `${url_api}/admin/verification`,
         type: "post",
         data: {
-            id: 3,
+            owner_id: 3,
             status_id: 3,
         },
         success(res) {

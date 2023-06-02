@@ -7,38 +7,47 @@
         <title>Document</title>
     </head>
     <body>
+        <!-- login.js -->
         <h1>Đăng nhập</h1>
-
         <button onclick="loginSuccess()">Đăng nhập thành công</button>
         <button onclick="loginFail()">Đăng nhập sai</button>
         <button onclick="loginErrorStatus()">Đăng nhập tài khoản bị khóa</button>
         <button onclick="loginErrorValidate()">Đăng nhập validate</button>
 
-        <h1>Duyệt tài khoản của Chủ sân</h1>
+        <!-- verification.js -->
+        <h1>Admin / Duyệt tài khoản của Chủ sân</h1>
         <button onclick="getOwner()">Lấy danh sách chủ sân</button>
         <button onclick="approve()">Duyệt hồ sơ chủ sân bóng thành công</button>
         <button onclick="refuse()">Từ chối hồ sơ chủ sân bóng thành công</button>
         <button onclick="verificationFail()">Thất bại vì truyền thiếu tham số</button>
 
+        <!-- address.js -->
         <h1>Adress API</h1>
         <button onclick="getListProvince()">Danh sách tất cả tỉnh thành</button>
         <button onclick="getListDistrict()">Danh sách Quận/Huyện tại Đà Nẵng</button>
         <button onclick="getListWard()">Danh sách Phường/Xã tại Hải Châu</button>
         <button onclick="getWardDetail()">Chi tiết Phường/Xã Hải Châu</button>
 
-        <h1>Sân bóng khách hàng</h1>
+        <!-- location.js -->
+        <h1>Custommer / Trang Sân bóng</h1>
         <button onclick="getLocationByWard()">Lấy địa điểm cho thuê theo Phường/Xã</button>
         <button onclick="getLocationDetail()">Lấy chi tiết địa điểm</button>
         <button onclick="getFieldType()">Lấy danh sách loại sân</button>
         <button onclick="getField()">Lấy danh sách sân theo địa điểm và khung giờ</button>
         <button onclick="getTimeSlot()">Lấy khung giờ</button>
 
-        <h1>Đặt sân</h1>
+        <h1>Customer / Đặt sân</h1>
         <button onclick="booking()">Đặt sân thành công</button>
 
         <h1>Chủ sân / Chỉnh sửa thông tin sân bóng</h1>
         <input type="file" id="images" multiple />
         <button onclick="uploadImage()">Upload image</button>
+
+        <!-- price.js -->
+        <h1>Chủ sân / Quản lý khung giờ</h1>
+        <button onclick="getTimeslotWithPrice()">Lấy khung giờ kèm theo giá</button>
+        <button onclick="updatePriceByTimeSlot()">Cập nhật giá theo khung giờ</button>
+        <button onclick="updatePriceByTimeSlotError()">Cập nhật giá theo khung giờ nhưng lỗi</button>
 
         <script>
             url_api = "http://localhost/sanbong.api/api";
@@ -48,5 +57,6 @@
         <script src="verification.js"></script>
         <script src="address.js"></script>
         <script src="location.js"></script>
+        <script src="price.js"></script>
     </body>
 </html>
