@@ -72,13 +72,13 @@ function booking() {
         url: `${url_api}/location/book-field`,
         type: "post",
         data: {
-            timeslot_id: 3,
-            field_id: 1,
+            timeslot_id: 15,
+            field_id: 8,
             customer_id: 5,
             customer_name: "Nguyễn Thành Viên",
             phone_number: "0123456789",
-            date_book: "2023-06-10",
-            price: 200000,
+            date_book: "2023-05-10",
+            price: 300000,
         },
         success(res) {
             console.log(res);

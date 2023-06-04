@@ -29,15 +29,16 @@
         <button onclick="getWardDetail()">Chi tiết Phường/Xã Hải Châu</button>
 
         <!-- location.js -->
-        <h1>Custommer / Trang Sân bóng</h1>
+        <h1>Khách hàng / Trang Sân bóng</h1>
         <button onclick="getLocationByWard()">Lấy địa điểm cho thuê theo Phường/Xã</button>
         <button onclick="getLocationDetail()">Lấy chi tiết địa điểm</button>
         <button onclick="getFieldType()">Lấy danh sách loại sân</button>
         <button onclick="getField()">Lấy danh sách sân theo địa điểm và khung giờ</button>
         <button onclick="getTimeSlot()">Lấy khung giờ</button>
 
-        <h1>Customer / Đặt sân</h1>
+        <h1>Khách hàng / Đặt sân</h1>
         <button onclick="booking()">Đặt sân thành công</button>
+        <button onclick="booking()">Đặt sân không thành công do đã có người đặt rồi</button>
 
         <h1>Chủ sân / Chỉnh sửa thông tin sân bóng</h1>
         <input type="file" id="images" multiple />
@@ -49,6 +50,16 @@
         <button onclick="updatePriceByTimeSlot()">Cập nhật giá theo khung giờ</button>
         <button onclick="updatePriceByTimeSlotError()">Cập nhật giá theo khung giờ nhưng lỗi</button>
 
+        <!-- field.js -->
+        <h1>Chủ sân / Quản lý sân</h1>
+        <button onclick="getByLocation()">Lấy danh sách sân bóng theo địa điểm</button>
+        <button onclick="getById()">Lấy chi tiết sân bóng</button>
+        <button onclick="create()">Tạo sân bóng mới</button>
+        <button onclick="update()">Cập nhật thông tin sân bóng</button>
+        <button onclick="deleteField()">Xóa sân bóng</button>
+
+        <h1>Chủ sân / Quản lý đặt sân</h1>
+
         <script>
             url_api = "http://localhost/sanbong.api/api";
         </script>
@@ -58,5 +69,6 @@
         <script src="address.js"></script>
         <script src="location.js"></script>
         <script src="price.js"></script>
+        <script src="field.js"></script>
     </body>
 </html>
