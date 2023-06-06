@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>API SÂN BÓNG</title>
     </head>
     <body>
         <!-- login.js -->
@@ -13,6 +13,7 @@
         <button onclick="loginFail()">Đăng nhập sai</button>
         <button onclick="loginErrorStatus()">Đăng nhập tài khoản bị khóa</button>
         <button onclick="loginErrorValidate()">Đăng nhập validate</button>
+        <hr />
 
         <!-- verification.js -->
         <h1>Admin / Duyệt tài khoản của Chủ sân</h1>
@@ -20,6 +21,7 @@
         <button onclick="approve()">Duyệt hồ sơ chủ sân bóng thành công</button>
         <button onclick="refuse()">Từ chối hồ sơ chủ sân bóng thành công</button>
         <button onclick="verificationFail()">Thất bại vì truyền thiếu tham số</button>
+        <hr />
 
         <!-- address.js -->
         <h1>Adress API</h1>
@@ -27,6 +29,7 @@
         <button onclick="getListDistrict()">Danh sách Quận/Huyện tại Đà Nẵng</button>
         <button onclick="getListWard()">Danh sách Phường/Xã tại Hải Châu</button>
         <button onclick="getWardDetail()">Chi tiết Phường/Xã Hải Châu</button>
+        <hr />
 
         <!-- location.js -->
         <h1>Khách hàng / Trang Sân bóng</h1>
@@ -35,20 +38,32 @@
         <button onclick="getFieldType()">Lấy danh sách loại sân</button>
         <button onclick="getField()">Lấy danh sách sân theo địa điểm và khung giờ</button>
         <button onclick="getTimeSlot()">Lấy khung giờ</button>
+        <hr />
 
         <h1>Khách hàng / Đặt sân</h1>
         <button onclick="booking()">Đặt sân thành công</button>
         <button onclick="booking()">Đặt sân không thành công do đã có người đặt rồi</button>
+        <hr />
+
+        <!-- customer-account.js -->
+        <h1>Khách hàng / Chỉnh sửa thông tin cá nhân</h1>
+        <button onclick="customerById()">Lấy thông tin cá nhân của khách hàng</button>
+        <br />
+        <input type="file" id="customer-image" />
+        <button onclick="updateCustomerInfo()">Chỉnh sửa thông tin cá nhân thành công</button>
+        <hr />
 
         <h1>Chủ sân / Chỉnh sửa thông tin sân bóng</h1>
         <input type="file" id="images" multiple />
         <button onclick="uploadImage()">Upload image</button>
+        <hr />
 
         <!-- price.js -->
         <h1>Chủ sân / Quản lý khung giờ</h1>
         <button onclick="getTimeslotWithPrice()">Lấy khung giờ kèm theo giá</button>
         <button onclick="updatePriceByTimeSlot()">Cập nhật giá theo khung giờ</button>
         <button onclick="updatePriceByTimeSlotError()">Cập nhật giá theo khung giờ nhưng lỗi</button>
+        <hr />
 
         <!-- field.js -->
         <h1>Chủ sân / Quản lý sân</h1>
@@ -57,18 +72,28 @@
         <button onclick="create()">Tạo sân bóng mới</button>
         <button onclick="update()">Cập nhật thông tin sân bóng</button>
         <button onclick="deleteField()">Xóa sân bóng</button>
+        <hr />
 
+        <!-- booking.js -->
         <h1>Chủ sân / Quản lý đặt sân</h1>
+        <button onclick="getListBooking()">Danh sách đơn đặt sân</button>
+        <button onclick="getDetailBooking()">Chi tiết đơn đặt sân</button>
+        <button onclick="approveBooking()">Duyệt đơn đặt sân</button>
+        <button onclick="cancelBooking()">Hủy đơn đặt sân</button>
+        <button onclick="payBooking()">Xác nhận thanh toán</button>
+        <hr />
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
         <script>
             url_api = "http://localhost/sanbong.api/api";
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
         <script src="login.js"></script>
         <script src="verification.js"></script>
         <script src="address.js"></script>
         <script src="location.js"></script>
         <script src="price.js"></script>
         <script src="field.js"></script>
+        <script src="customer-account.js"></script>
+        <script src="booking.js"></script>
     </body>
 </html>

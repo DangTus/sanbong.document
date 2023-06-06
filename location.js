@@ -90,7 +90,7 @@ function booking() {
 function uploadImage() {
     const listImageFileElement = document.querySelector("#images");
 
-    var formData = new FormData();
+    let formData = new FormData();
     formData.append("location_id", 1);
     formData.append("name", "Hòa Tiến Vip");
     formData.append("description", "Sân này vip nhất Hòa Tiến");
