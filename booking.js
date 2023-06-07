@@ -4,6 +4,9 @@ function getListBooking() {
         type: "get",
         data: {
             location_id: 1,
+            date_book: null,
+            status_id: 2,
+            field_id: null,
         },
         success(res) {
             console.log(res);
